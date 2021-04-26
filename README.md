@@ -31,7 +31,7 @@ Step 1: Clean the data
 - Remove unwanted columns
 
 Step 2: Pre-process the data
-- Identify Continous vs Categorical data
+- Identify continous vs categorical data
 - Remove outliers
 - Create ranges for some categorical variables
 - Transform categoricals into dummy variables
@@ -58,11 +58,28 @@ Step 6: Predict the price
 
 ### EDA 
 
-EDA 1. Identify continuous vs categorical variables and transform them accordingly
+#### EDA 1. Identify continuous vs categorical variables and transform them accordingly
 
-After the data has been cleaned and gotten rid of missing values, we need to separate continuous and categorical variables to prepare them for regression.
+After the data has been cleaned by removing the missing values, we need to separate the continuous and categorical variables to prepare them for regression.
 
-A simple way to identify these two variables are by plotting a scatter matrix. Continuous variables show a linear and even distribution across the plot. While categorical variables show a grouped and ordered distribution across the plot. There are also oridinal variables which are ordered categorical variables. These are categories with a natural order and can be treated as continuous variables.
+A simple way to identify these two variables are by plotting a scatter matrix. Continuous variables show a linear and even distribution across the plot. While categorical variables show a grouped and ordered distribution across the plot. There are also oridinal variables which are ordered categorical variables. These are categorical classes with a natural order of progression and does not need to be transformed. INSERT IMAGE HERE
 
-The continuous variables show a high positive skewness
+The continuous variables show a high positive skewness with a bunch outliers extending the tail towards the right. We can remove these outiers using the Z-score calculation.
+INSERT IMAGE HERE
+
+The histogram shows clear improvement in the normality of the data. We will take this forward to fit the model.
+
+The categorical variables also show presence of outliers. Within these variables we also have so called 'oridnal variables'. These variables have a natural order of progression and does not need to be transformed into dummy variables. We can only use the Z-score calculation on continous or ordinal varibles. We will have to the trim the rest of the true categoricals manually.
+
+INSERT IMAGE HERE
+
+The scatterplot shows better distiction among classes for the categorical variables. 
+
+#### EDA 2. Check for multicollinearity and remove highly correlated pairs from the dataset
+
+The dataset now needs to be checked for multicollinearity between its predictors. Having high correlation among each other will lead to predictors being interdependent and loses their true significance within the model. 
+
+
+
+
 
