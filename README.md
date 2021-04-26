@@ -13,11 +13,11 @@ King County House Sales Data
 #### EDA 1. Identify continuous vs categorical variables and transform them accordingly
 
 - The data set consists of many predictors which are both continuous and catgorical in nature. For us to perform a multivariate linear regression,
-these will need to be cleaned, trimmed and/or transformed appropriately before fitting them into a model.
+these will need to be cleaned, trimmed and transformed appropriately before fitting them into a model.
 
 #### EDA 2. Check for multicollinearity and remove highly correlated pairs from the dataset 
 
-- Multicollinearity reduces predictive power or significance of the predictors. Having a model without multicollineraty means that each of the predictors has an
+- Multicollinearity reduces predictive power or significance of the predictors. Having a model without multicollineraty means that each of the predictors have an
 independent contribution to the overall result of the model.
 
 #### EDA 3. Finalize the model and plot the line of best fit to predict the price
