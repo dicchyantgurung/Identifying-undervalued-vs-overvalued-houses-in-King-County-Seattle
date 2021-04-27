@@ -8,7 +8,7 @@ Clean, explore, and model this dataset on a multivariate linear regression to pr
 
 ### Dataset:
 
-King County House Sales Data
+King County Housing Sales Data
 
 ### Objective:
 
