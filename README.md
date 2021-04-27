@@ -1,5 +1,7 @@
 # King County House Sales Analysis
 
+![King County] )(https://github.com/dicchyant84/Module_2-Final-Project/blob/main/KC.jpg)
+
 ### Project: 
 
 Clean, explore, and model this dataset with a multivariate linear regression to predict the sale price of houses as accurately as possible.
