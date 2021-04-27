@@ -77,7 +77,7 @@ The scatterplot shows better distiction among classes for the categorical variab
 
 #### EDA 2. Check for multicollinearity and remove highly correlated pairs from the dataset
 
-The dataset now needs to be checked for multicollinearity between its predictors. Having high correlation among each other will lead to predictors being interdependent and loses their true significance within the model. 
+The dataset now needs to be checked for multicollinearity. Having high correlation among each other will lead to predictors being dependent and loses their true significance within the model. 
 
 
 
