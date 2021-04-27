@@ -64,12 +64,21 @@ Step 6: Predict the price
 
 After the data has been cleaned by removing the missing values, we need to separate the continuous and categorical variables to prepare them for regression.
 
-A simple way to identify these two variables are by plotting a scatter matrix. Continuous variables show a linear and even distribution across the plot. While categorical variables show a grouped and ordered distribution across the plot. There are also oridinal variables which are ordered categorical variables. These are categorical classes with a natural order of progression and does not need to be transformed. INSERT IMAGE HERE
+A simple way to identify these two variables is by plotting a scatter matrix. Continuous variables show a linear and even distribution across the plot. While categorical variables show a grouped and ordered distribution across the plot. There are also oridinal variables which are ordered categorical variables. These are categorical classes with a natural order of progression and do not need to be transformed into dummy variables. 
+
+INSERT IMAGE HERE
+
+Here you can clearly see the two different types of data. We can take a closer look on each one of the variables.
+
+INSERT IMAGE HERE 
 
 The continuous variables show a high positive skewness with a bunch outliers extending the tail towards the right. We can remove these outiers using the Z-score calculation.
+
 INSERT IMAGE HERE
 
 The histogram shows clear improvement in the normality of the data. We will take this forward to fit the model.
+
+INSERT IMAGE HERE
 
 The categorical variables also show presence of outliers. Within these variables we also have so called 'oridnal variables'. These variables have a natural order of progression and does not need to be transformed into dummy variables. We can only use the Z-score calculation on continous or ordinal varibles. We will have to the trim the rest of the true categoricals manually.
 
@@ -79,7 +88,7 @@ The scatterplot shows better distiction among classes for the categorical variab
 
 #### EDA 2. Check for multicollinearity and remove highly correlated pairs from the dataset
 
-The dataset now needs to be checked for multicollinearity. Having high correlation among each other will lead to predictors being dependent and loses their true significance within the model. 
+The dataset now needs to be checked for multicollinearity. Having high correlation means that predictors have linear relationship with each other. This leads to predictors being less significant to the model. 
 
 
 
