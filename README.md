@@ -1,4 +1,4 @@
-# King County House Sales Analysis
+# King County Housing Sales Analysis
 
 ![King County](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/KC.jpg)
 
