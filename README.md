@@ -94,6 +94,72 @@ A heatmap can be used to plot the correlation matrix.
 
 INSERT IMAGE HERE
 
-You can see from the color depth in the heatmap, there are some pairs which are highly correlated to each other.  
+You can see from the colormap in the heatmap that there are some pairs which are highly correlated to each other. We can remove them by performing some sorting and filtering through code. 
+
+INSERT IMAGE HERE
+
+- From the above table, we can see that Sqft_Above, Sqft_Lot15, Sqft_Living15, and Sqft_Living are highly correlated.
+- Removing Sqft_Lot15 and Sqft_Living15 makes sense as houses in the same area with the same square footage will have similar prices.
+- Sqft_Above and Sqft_Living, are one in the same so being highly correlated makes sense. Both of these variables are correlated with other variables, which means that they themselves are not adding much value in differentiating the underlying data.
+
+The resultant heatmap after removing pairs with over .7 correlation shows some improvement in the data.
+
+INSERT IMAGE HERE
+
+#### EDA 3. Finalize the model and plot the line of best fit to predict the price
+
+We will use the statsmodel module to run the base model. The OLS regression in statsmodel gives us a line of best fit minimizing the sum of squared vertical distances between the observed values and the values predicted by the linear approximation. 
+
+model.summary() gives us all the parameters of the model.
+- R-squared represents the variability explained by the model. We have a r-square value of .776 for our base model. This means that 77.6% variability present in the dataset is explained by this model.
+- We can also see a list of p-values for all the predictors that were used to run the model. From here we can sort out predictors with high p-value. Having high p-value (greater than 5%) means that the probability of the predictors having no effect or relationship to the dependent variable is high (greater than 5%). Hence, they are not significant to the model at a confidence level of 95%.
+
+INSERT IMAGE HERE
+
+Removing these will give us the final list of predictors from which we can re-run the base model.
+
+K-folds cross validation is used to tune the model. The difference between training and testing error can also be observed to check for underfitting/overfitting.
+
+The base model is plotted using sns.regplot from seaborn library.
+
+INSERT IMAGE HERE
+
+From the image above, you can see that there are a lot of outliers present in the data. We can remove house prices over a million to reduce variability and improve model performance.
+
+INSERT IMAGE HERE
+
+The line of best fit looks more in line with the data for this regression.
+
+### Conclusion
+
+Based on the data available, our final model shows some meaningful relationships on how different variables affect the overall **Price** of a house. The following characterstics have a positive relationship with Price and help increase the value of a home.
+* Sqft Lot                  
+* Number of Bedrooms        
+* Number of Bathrooms     
+* Condition of the house  
+* Grade of the house        
+* Number of times the house has been viewed 
+
+**Number of floors** seem to have a negative relationship with the price of a house, which is odd. This could mean that people in King County prefer houses with lesser floors. However, statistically speaking our data actually has majority of houses with only one floor and decreases in count as the number of floors increases. This might have created a bias for 'Floors' in our model.
+
+**Houses built before the year of 1945** seem to have a positive relationship with Price. It can be explained that these houses might have been preserving their value since they are over 50 years of age and are considered as historic. The **houses after 1945** have a decreasing negative relationship with Price, which confirms the market notion that old houses have lesser value than the new ones.
+
+The relationship between different **Zipcodes** and Price shows the overall distribution of expensive houses to cheaper ones in King County. The top 5 zipcodes with the highest home values are as follows:
+* Zipcode_98039	
+* Zipcode_98004
+* Zipcode_98040	
+* Zipcode_98112	
+* Zipcode_98109
+
+While the least desirable zipcodes are as follows:
+* Zipcode_98023	
+* Zipcode_98092	
+* Zipcode_98002	
+* Zipcode_98198	
+* Zipcode_98058
+
+
+
+
 
 
