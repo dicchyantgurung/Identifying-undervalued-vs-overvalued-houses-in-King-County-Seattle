@@ -90,7 +90,10 @@ The scatterplot shows better distiction among classes for the categorical variab
 
 The dataset now needs to be checked for multicollinearity. Having high correlation means that predictors have linear relationship with each other. This leads to predictors being less significant to the model. 
 
+A heatmap can be used to plot the correlation matrix.
 
+INSERT IMAGE HERE
 
+You can see from the color depth in the heatmap, there are some pairs which are highly correlated to each other.  
 
 
