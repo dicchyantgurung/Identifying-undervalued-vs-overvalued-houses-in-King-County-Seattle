@@ -24,7 +24,7 @@ independent contribution to the overall result of the model.
 
 #### EDA 3. Finalize the model and plot the line of best fit to predict the price
 
-- Finally, test the model to predict house prices in King County.
+- Test the model to predict house prices in King County.
 
 ### Process Overview:
 
