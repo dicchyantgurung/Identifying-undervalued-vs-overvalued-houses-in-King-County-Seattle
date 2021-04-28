@@ -64,23 +64,27 @@ Step 6: Predict the price
 
 After the data has been cleaned by removing the missing values, we need to separate the continuous and categorical variables to prepare them for regression.
 
-A simple way to identify these two variables is by plotting a scatter matrix. Continuous variables show a linear and even distribution across the plot. While categorical variables show a grouped and ordered distribution across the plot. There are also oridinal variables which are ordered-categorical variables. These are categorical classes with a natural order of progression and do not need to be transformed into dummy variables. 
+A simple way to identify these two variables is by plotting a scatter matrix. Continuous variables show a linear and even distribution across the plot. While categorical variables show a grouped and ordered distribution across the plot. There are also oridinal variables which are ordered-categorical variables. These are categorical classes with a natural order of progression and does not need to be transformed into dummy variables. 
 
 INSERT IMAGE HERE
 
 Here you can clearly see the two different types of data. We can take a closer look on each of the variables below.
 
+#### Continuous variables
+
 INSERT IMAGE HERE 
 
-The continuous variables show a high positive skewness with a bunch outliers extending the tail towards the right. We can remove these outiers using the Z-score calculation.
+The continuous variables show a high positive skewness with a bunch outliers extending the tail towards the right. We can remove these outliers using the Z-score calculation.
 
 INSERT IMAGE HERE
 
 The histogram shows clear improvement in the normality of the data. We will take this forward to fit the model.
 
+#### Categorical variables
+
 INSERT IMAGE HERE
 
-The categorical variables also show presence of outliers. Within these variables we also have so called 'oridnal variables'. These variables have a natural order of progression and does not need to be transformed into dummy variables. We can only use the Z-score calculation on continous or ordinal varibles. We will have to the trim the rest of the true categoricals manually.
+The categorical variables also show presence of outliers. Within these variables we also have so called 'oridnal variables'. These variables have a natural order of progression and does not need to be transformed into dummy variables. We can only use the Z-score calculation on continous or ordinal varibles. We will have to the trim the rest of the categoricals manually.
 
 INSERT IMAGE HERE
 
@@ -88,75 +92,63 @@ The scatterplot shows better distiction among classes for the categorical variab
 
 #### EDA 2. Check for multicollinearity and remove highly correlated pairs from the dataset
 
-The dataset now needs to be checked for multicollinearity. Having high correlation means that predictors have linear relationship with each other. This leads to predictors being less significant to the model. 
+The dataset now needs to be checked for multicollinearity. Having high correlation means that predictors have linear relationship with each other. This leads to predictors adding less value or being insignificant to the model. 
 
 A heatmap can be used to plot the correlation matrix.
 
 INSERT IMAGE HERE
 
-You can see from the colormap in the heatmap that there are some pairs which are highly correlated to each other. We can remove them by performing some sorting and filtering through code. 
-
 INSERT IMAGE HERE
 
-- From the above table, we can see that Sqft_Above, Sqft_Lot15, Sqft_Living15, and Sqft_Living are highly correlated.
-- Removing Sqft_Lot15 and Sqft_Living15 makes sense as houses in the same area with the same square footage will have similar prices.
-- Sqft_Above and Sqft_Living, are one in the same so being highly correlated makes sense. Both of these variables are correlated with other variables, which means that they themselves are not adding much value in differentiating the underlying data.
+You can see from the colormap that there are some pairs which are highly correlated to each other (closer to one). We can sort these out through some code.
+
+INSERT IMAGE HERE
 
 The resultant heatmap after removing pairs with over .7 correlation shows some improvement in the data.
-
-INSERT IMAGE HERE
 
 #### EDA 3. Finalize the model and plot the line of best fit to predict the price
 
 We will use the statsmodel module to run the base model. The OLS regression in statsmodel gives us a line of best fit minimizing the sum of squared vertical distances between the observed values and the values predicted by the linear approximation. 
 
-model.summary() gives us all the parameters of the model.
-- R-squared represents the variability explained by the model. We have a r-square value of .776 for our base model. This means that 77.6% variability present in the dataset is explained by this model.
-- We can also see a list of p-values for all the predictors that were used to run the model. From here we can sort out predictors with high p-value. Having high p-value (greater than 5%) means that the probability of the predictors having no effect or relationship to the dependent variable is high (greater than 5%). Hence, they are not significant to the model at a confidence level of 95%.
+INSERT IMAGE HERE
+
+From the above plot, we can see that there is a high dispersion of data after the million dollar mark. We can reduce the range of house prices over a million to fix this and improve model performance.
 
 INSERT IMAGE HERE
 
-Removing these will give us the final list of predictors from which we can re-run the base model.
-
-K-folds cross validation is used to tune the model. The difference between training and testing error can also be observed to check for underfitting/overfitting.
-
-The base model is plotted using sns.regplot from seaborn library.
-
-INSERT IMAGE HERE
-
-From the image above, you can see that there are a lot of outliers present in the data. We can remove house prices over a million to reduce variability and improve model performance.
-
-INSERT IMAGE HERE
-
-The line of best fit looks more in line with the data for this regression.
+The line of best fit looks more in-line with the data for this regression.
 
 ### Conclusion
 
 Based on the data available, our final model shows some meaningful relationships on how different variables affect the overall **Price** of a house. The following characterstics have a positive relationship with Price and help increase the value of a home.
-* Sqft Lot                  
-* Number of Bedrooms        
-* Number of Bathrooms     
-* Condition of the house  
-* Grade of the house        
-* Number of times the house has been viewed 
+* Sqft Lot                  **+ $1.5k**            
+* Number of Bedrooms        **+ $27k**
+* Number of Bathrooms       **+ $38k**
+* Condition of the house    **+ $24k**
+* Grade of the house        **+ $77k**
+* Number of times the house has been viewed. **+ $41k**  
 
-**Number of floors** seem to have a negative relationship with the price of a house, which is odd. This could mean that people in King County prefer houses with lesser floors. However, statistically speaking our data actually has majority of houses with only one floor and decreases in count as the number of floors increases. This might have created a bias for 'Floors' in our model.
+* Number of floors seem to have a negative relationship with the price of a house, which is odd. This could mean that people in King County prefer houses with lesser floors. However, statistically speaking our data has majority of houses with only one floor and decreases in count as the number of floors increases. This might have created a bias for 'Floors' in our model.   **- $8k*
 
-**Houses built before the year of 1945** seem to have a positive relationship with Price. It can be explained that these houses might have been preserving their value since they are over 50 years of age and are considered as historic. The **houses after 1945** have a decreasing negative relationship with Price, which confirms the market notion that old houses have lesser value than the new ones.
+* Houses built before the year of 1945 seem to have a positive relationship with Price. It can be explained that these houses might have been preserving their value since they are over 50 years of age and are considered as historic.  **+ $12k - $27k**
+
+* Houses built after 1945 have a decreasing negative relationship with Price. This confirms the market notion that old houses have lesser value than the new ones. **- $13k - $25k**
 
 The relationship between different **Zipcodes** and Price shows the overall distribution of expensive houses to cheaper ones in King County. The top 5 zipcodes with the highest home values are as follows:
-* Zipcode_98039	
-* Zipcode_98004
-* Zipcode_98040	
-* Zipcode_98112	
-* Zipcode_98109
+* Zipcode_98039	**+ $668k**
+* Zipcode_98004 **+ $506k**
+* Zipcode_98040	**+ $432k**
+* Zipcode_98112	**+ $400k**
+* Zipcode_98109 **+ $381k**
 
 While the least desirable zipcodes are as follows:
-* Zipcode_98023	
-* Zipcode_98092	
-* Zipcode_98002	
-* Zipcode_98198	
-* Zipcode_98058
+* Zipcode_98023	**- $20k**
+* Zipcode_98092	**- $19k**
+* Zipcode_98002	**+ $7k**
+* Zipcode_98198	**+ 17K**
+* Zipcode_98058 **+ 34k
+
+#### Predict a house price
 
 
 
