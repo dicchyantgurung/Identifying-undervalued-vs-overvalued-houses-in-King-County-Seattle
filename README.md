@@ -68,7 +68,7 @@ A simple way to identify these two variables is by plotting a scatter matrix. Co
 
 INSERT IMAGE HERE
 
-Here you can clearly see the two different types of data. We can take a closer look on each of the variables below.
+Here you can clearly see the two types of data. We can take a closer look on each of the variables below.
 
 #### Continuous variables
 
