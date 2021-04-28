@@ -43,7 +43,7 @@ Step 3: Check for multicollinearity
 - Run correlation matrix and remove highly correlated pairs
 - Plot to confirm correlation
 
-Step 4: Run a base linear model
+Step 4: Run a base model
 - Perform linear regression to identify p-values among predictors
 - Remove any predictor with p-value larger than 5%
 - Perform k-folds cross validation to validate the model
