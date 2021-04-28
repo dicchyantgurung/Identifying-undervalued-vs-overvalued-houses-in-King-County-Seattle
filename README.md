@@ -64,11 +64,11 @@ Step 6: Predict the price
 
 After the data has been cleaned by removing the missing values, we need to separate the continuous and categorical variables to prepare them for regression.
 
-A simple way to identify these two variables is by plotting a scatter matrix. Continuous variables show a linear and even distribution across the plot. While categorical variables show a grouped and ordered distribution across the plot. There are also oridinal variables which are ordered categorical variables. These are categorical classes with a natural order of progression and do not need to be transformed into dummy variables. 
+A simple way to identify these two variables is by plotting a scatter matrix. Continuous variables show a linear and even distribution across the plot. While categorical variables show a grouped and ordered distribution across the plot. There are also oridinal variables which are ordered-categorical variables. These are categorical classes with a natural order of progression and do not need to be transformed into dummy variables. 
 
 INSERT IMAGE HERE
 
-Here you can clearly see the two different types of data. We can take a closer look on each one of the variables.
+Here you can clearly see the two different types of data. We can take a closer look on each of the variables below.
 
 INSERT IMAGE HERE 
 
