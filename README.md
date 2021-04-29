@@ -84,13 +84,13 @@ The resultant histogram shows clear improvement in the normality of the data. We
 
 The categorical variables also show presence of some outliers in its data.
 
-![Categorical Variables](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variable.png)
+![Categorical Variables](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variables.png)
 
 Within these variables we also have so called 'oridnal variables'. We can use the Z-score calculation only on continous and ordinal varibles. We will have to the trim the rest of the categoricals manually.
 
-![Categorical Variables_2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variable_2.png)
+![Categorical Variables_2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variables_2.png)
 
-![Categorical Variables_3](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variable_3.png)
+![Categorical Variables_3](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variables_3.png)
 
 The resultant scatterplot above shows better distiction among classes for the categorical variables. 
 
