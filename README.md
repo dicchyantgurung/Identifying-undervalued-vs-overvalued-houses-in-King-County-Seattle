@@ -88,6 +88,8 @@ The categorical variables also show presence of outliers. Within these variables
 
 ![Categorical Variables_2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variable_2.png)
 
+![Categorical Variables_3](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variable_3.png)
+
 The scatterplot shows better distiction among classes for the categorical variables. 
 
 #### EDA 2. Check for multicollinearity and remove highly correlated pairs from the dataset
