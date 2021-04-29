@@ -66,31 +66,33 @@ After the data has been cleaned by removing the missing values, we need to separ
 
 A simple way to identify these two variables is by plotting a scatter matrix. Continuous variables show a linear and even distribution across the plot. While categorical variables show a grouped and ordered distribution across the plot. There are also oridinal variables which are ordered-categorical variables. These are categorical classes with a natural order of progression and does not need to be transformed into dummy variables. 
 
-![Scatter Matrix](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Scatter_Matrix.png)
+In the scatter matrix below, you can clearly see the two types of data. We can take a closer look at each one of the variables in the section below.
 
-Here, you can clearly see the two types of data. We can take a closer look at each one of the variables below.
+![Scatter Matrix](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Scatter_Matrix.png)
 
 #### Continuous variables
 
+Plotting a histogram for the continuous variables show a high positive skewness with a bunch outliers extending the tail towards the right. We can remove these outliers using some Z-score calculation.
+
 ![Continuous Variables](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Continuous_Variables.png)
 
-The histogram of the continuous variables show a high positive skewness with a bunch outliers extending the tail towards the right. We can remove these outliers using some Z-score calculation.
-
-The resultant histogram below shows clear improvement in the normality of the data. We will take this forward to fit the model.
+The resultant histogram shows clear improvement in the normality of the data. We will take this forward to fit the model.
 
 ![Continuous Variables 2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Continuous_Variables_2.png)
 
 #### Categorical variables
 
+The categorical variables also show presence of some outliers in its data.
+
 ![Categorical Variables](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variable.png)
 
-The categorical variables also show presence of outliers. Within these variables we also have so called 'oridnal variables'. These variables have a natural order of progression and does not need to be transformed into dummy variables. We can only use the Z-score calculation on continous or ordinal varibles. We will have to the trim the rest of the categoricals manually.
+Within these variables we also have so called 'oridnal variables'. We can use the Z-score calculation only on continous and ordinal varibles. We will have to the trim the rest of the categoricals manually.
 
 ![Categorical Variables_2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variable_2.png)
 
 ![Categorical Variables_3](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variable_3.png)
 
-The scatterplot shows better distiction among classes for the categorical variables. 
+The resultant scatterplot above shows better distiction among classes for the categorical variables. 
 
 #### EDA 2. Check for multicollinearity and remove highly correlated pairs from the dataset
 
