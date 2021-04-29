@@ -50,7 +50,7 @@ Step 4: Run a base model
 - Plot the model
 
 Step 5: Tune the base model
-- Trim the 'Price' column to only include data upto 1 million dollars
+- Trim the 'Price' column to include house price only upto 1 million dollars
 - Perform k-folds cross validation to validate the model
 - Finalize the model
 
