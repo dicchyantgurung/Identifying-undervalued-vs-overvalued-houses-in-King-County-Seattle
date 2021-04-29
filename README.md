@@ -66,29 +66,38 @@ After the data has been cleaned by removing the missing values, we need to separ
 
 A simple way to identify these two variables is by plotting a scatter matrix. Continuous variables show a linear and even distribution across the plot. While categorical variables show a grouped and ordered distribution across the plot. There are also oridinal variables which are ordered-categorical variables. These are categorical classes with a natural order of progression and does not need to be transformed into dummy variables. 
 
+
 ![Scatter Matrix](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Scatter_Matrix.png)
+
 
 Here you can clearly see the two types of data. We can take a closer look at each one of the variables below.
 
 #### Continuous variables
 
+
 ![Continuous Variables](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Continuous_Variables.png)
 
 The histogram of the continuous variables show a high positive skewness with a bunch outliers extending the tail towards the right. We can remove these outliers using the Z-score calculation.
 
+
 ![Continuous Variables 2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Continuous_Variables_2.png)
 
-The histogram shows clear improvement in the normality of the data. We will take this forward to fit the model.
+
+The histogram above shows clear improvement in the normality of the data. We will take this forward to fit the model.
 
 #### Categorical variables
 
+
 ![Categorical Variables](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variable.png)
 
+
 The categorical variables also show presence of outliers. Within these variables we also have so called 'oridnal variables'. These variables have a natural order of progression and does not need to be transformed into dummy variables. We can only use the Z-score calculation on continous or ordinal varibles. We will have to the trim the rest of the categoricals manually.
+
 
 ![Categorical Variables_2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variable_2.png)
 
 ![Categorical Variables_3](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variable_3.png)
+
 
 The scatterplot shows better distiction among classes for the categorical variables. 
 
@@ -98,25 +107,33 @@ The dataset now needs to be checked for multicollinearity. Having high correlati
 
 A heatmap can be used to plot the correlation matrix.
 
+
 ![Correlation Matrix](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Correlation_Matrix.png)
 
 ![Correlation Matrix_2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Correlation_Matrix_2.png)
 
+
 You can see from the colormap that there are some pairs which are highly correlated to each other (closer to one). We can sort these out through some code.
+
 
 ![Correlation Matrix_3](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Correlation_Matrix_3.png)
 
-The resultant heatmap after removing pairs with over .7 correlation shows some improvement in the data.
+
+The resultant heatmap above after removing pairs with over .7 correlation shows some improvement in the data.
 
 #### EDA 3. Finalize the model and plot the line of best fit to predict the price
 
-We will use the statsmodel module to run the base model. The OLS regression in statsmodel gives us a line of best fit minimizing the sum of squared vertical distances between the observed values and the values predicted by the linear approximation. 
+We will use the statsmodel module to run the base model. The OLS regression in statsmodel gives us a line of best fit minimizing the sum of squared vertical distances between the observed values and the values predicted by the linear approximation. This can be plotted using sns.regplot from seaborn library.
+
 
 ![Multivariate Regression](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Multivariate_Regression.png)
 
+
 From the above plot, we can see that there is a high dispersion of data after the million dollar mark. We can reduce the range of house prices over a million to fix this and improve model performance.
 
+
 ![Multivariate Regression](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Multivariate_Regression_2.png)
+
 
 The line of best fit looks more in-line with the data for this regression.
 
