@@ -102,11 +102,11 @@ A heatmap can be used to plot the correlation matrix.
 
 ![Correlation Matrix](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Correlation_Matrix.png)
 
-A closer look,
+Taking a closer look,
 
 ![Correlation Matrix_2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Correlation_Matrix_2.png)
 
-We can see from the colormap that there are some pairs which are highly correlated to each other (closer to one). We can sort these out through some code.
+We can see from the colormap that there are some highly correlated pairs. This ranges from -1 to 1. 1 being 100% related  We can sort these out through some code.
 
 Removing the highly correlated pairs (greater than .7), gives us the resultant heatmap below.
 
@@ -118,7 +118,7 @@ We will use the statsmodel module to run the base model. The OLS regression in s
 
 ![Multivariate Regression](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Multivariate_Regression.png)
 
-From the plot above, we can see that there is a high dispersion of data after the million dollar mark in house prices. We can remove all house priced over a million dollars to fix this and improve the performance of the model.
+From the plot above, we can see that there is a high dispersion of data after the million dollar mark in house prices. We can remove the houses priced over a million dollars to fix this and improve the performance of the model.
 
 ![Multivariate Regression](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Multivariate_Regression_2.png)
 
