@@ -114,11 +114,11 @@ Removing the highly correlated pairs (greater than .7), gives us the resultant h
 
 #### EDA 3. Finalize the model and plot the line of best fit to predict the price
 
-We will use the statsmodel module to run the base model. The OLS regression in statsmodel gives us a line of best fit while minimizing the sum of squared vertical distances between the observed values and the values predicted by the linear approximation. This can be plotted using sns.regplot from seaborn library.
+We will use the statsmodel module to run the base model. The OLS regression in statsmodel gives us a line of best fit by minimizing the sum of squared vertical distances between the observed values and the values predicted by the linear approximation. This can be plotted using sns.regplot from seaborn library.
 
 ![Multivariate Regression](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Multivariate_Regression.png)
 
-From the plot above, we can see that there is a high dispersion of data after the million dollar mark. We can reduce the range of house prices over a million to fix this and improve the performance of the model.
+From the plot above, we can see that there is a high dispersion of data after the million dollar mark in house prices. We can remove all house priced over a million dollars to fix this and improve the performance of the model.
 
 ![Multivariate Regression](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Multivariate_Regression_2.png)
 
