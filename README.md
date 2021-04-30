@@ -72,11 +72,11 @@ In the scatter matrix below, you can clearly see the two types of data. We can t
 
 #### Continuous variables
 
-Plotting a histogram for the continuous variables show a high positive skewness with a bunch outliers extending the tail towards the right. We can remove these outliers using some Z-score calculation.
+Plotting a histogram for the continuous variables show a high positive skewness. We can correct this by removing the outliers using some Z-score calculation.
 
 ![Continuous Variables](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Continuous_Variables.png)
 
-The resultant histogram shows clear improvement in the normality of the data. We will take this forward to fit the model.
+After the outliers are removed, the resultant histogram shows clear improvement in the normality of the data. We will take this forward to fit the model.
 
 ![Continuous Variables 2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Continuous_Variables_2.png)
 
@@ -88,35 +88,37 @@ The categorical variables also show presence of some outliers in its data.
 
 Within these variables we also have so called 'oridnal variables'. We can use the Z-score calculation only on continous and ordinal varibles. We will have to the trim the rest of the categoricals manually.
 
+After the outliers are removed, the resultant scatterplot shows better distiction among classes for the categorical variables. 
+
 ![Categorical Variables_2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variables_2.png)
 
 ![Categorical Variables_3](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variables_3.png)
 
-The resultant scatterplot above shows better distiction among classes for the categorical variables. 
-
 #### EDA 2. Check for multicollinearity and remove highly correlated pairs from the dataset
 
-The dataset now needs to be checked for multicollinearity. Having high correlation means that predictors have linear relationship with each other. This leads to predictors adding less value or being insignificant to the model. 
+The dataset now needs to be checked for multicollinearity. Having high correlation means that predictors will have linear relationship with each other. This leads to predictors adding less value or being insignificant to the model. 
 
 A heatmap can be used to plot the correlation matrix.
 
 ![Correlation Matrix](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Correlation_Matrix.png)
 
+A closer look,
+
 ![Correlation Matrix_2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Correlation_Matrix_2.png)
 
-You can see from the colormap that there are some pairs which are highly correlated to each other (closer to one). We can sort these out through some code.
+We can see from the colormap that there are some pairs which are highly correlated to each other (closer to one). We can sort these out through some code.
+
+Removing the highly correlated pairs (greater than .7), gives us the resultant heatmap below.
 
 ![Correlation Matrix_3](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Correlation_Matrix_3.png)
 
-The resultant heatmap above after removing pairs with over .7 correlation shows some improvement in the data.
-
 #### EDA 3. Finalize the model and plot the line of best fit to predict the price
 
-We will use the statsmodel module to run the base model. The OLS regression in statsmodel gives us a line of best fit minimizing the sum of squared vertical distances between the observed values and the values predicted by the linear approximation. This can be plotted using sns.regplot from seaborn library.
+We will use the statsmodel module to run the base model. The OLS regression in statsmodel gives us a line of best fit while minimizing the sum of squared vertical distances between the observed values and the values predicted by the linear approximation. This can be plotted using sns.regplot from seaborn library.
 
 ![Multivariate Regression](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Multivariate_Regression.png)
 
-From the above plot, we can see that there is a high dispersion of data after the million dollar mark. We can reduce the range of house prices over a million to fix this and improve model performance.
+From the plot above, we can see that there is a high dispersion of data after the million dollar mark. We can reduce the range of house prices over a million to fix this and improve the performance of the model.
 
 ![Multivariate Regression](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Multivariate_Regression_2.png)
 
