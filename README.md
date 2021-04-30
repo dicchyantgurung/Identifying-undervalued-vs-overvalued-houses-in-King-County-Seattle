@@ -126,7 +126,7 @@ The line of best fit looks more in-line with the data for this regression.
 
 ### Conclusion
 
-Based on the regression, our final model shows some meaningful relationships on how different variables affect the overall **Price** of a house. With an overall coefficient of **- $550k**, each of the characterstics are added, in multiples of their respective quantity in order to give the final price of the house.
+Based on the regression, our final model shows some meaningful relationships on how different variables affect the overall **Price** of a house. With an overall coefficient of **- $550k**, each of the characterstic's coefficients are added, in multiples of their respective quantity in order to give the final price of the house.
 
 The following characterstics have a positive relationship with Price and helps increase the value of a home.
 * Sqft Lot                                   **+ $1.5k**       
