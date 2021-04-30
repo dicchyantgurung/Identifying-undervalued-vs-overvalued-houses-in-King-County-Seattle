@@ -138,11 +138,11 @@ The following characterstics have a positive relationship with Price and helps i
 
 Number of floors seem to have a negative relationship with the price of a house, which is odd. This could mean that people in King County prefer houses with lesser floors. However, statistically speaking our data has majority of houses with only one floor and decreases in count as the number of floors increases. This might have created a bias for 'Floors' in our model. **- $8k**
 
-Houses built before the year of 1945 seem to have a positive relationship with **Price**. While houses built after 1945 have a decreasing negative relationship with **Price**. 
+Houses built before the year of 1945 seem to have a positive relationship with Price. While houses built after 1945 have a decreasing negative relationship with Price. 
 * It can be explained that houses built before 1945 might have been considered 'historic'. Hence, preserving their value since they are over 50 years of age. **+ ($12k - $27k)**
 * Houses built after 1945 however has been losing value as older it gets. **- ($13k - $25k)**
 
-The relationship between different **Zipcodes** and **Price** shows the overall distribution of expensive houses to cheaper ones in King County. 
+The relationship between different **Zipcodes** and **Price** shows the overall distribution of home value in King County. 
 
 The top 5 zipcodes with the highest home value are as follows:
 * Zipcode_98039	**+ $668k**
