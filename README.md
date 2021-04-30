@@ -106,9 +106,9 @@ Taking a closer look,
 
 ![Correlation Matrix_2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Correlation_Matrix_2.png)
 
-We can see from the colormap that there are some highly correlated pairs. This ranges from -1 to 1. 1 being 100% related  We can sort these out through some code.
+We can see from the colormap that there are some highly correlated pairs. The correlation ranges from -1 to 1. 1 being 100% postively related and -1 being 100% inversely related. It is common practise to consider any pairs greater than .7 to be highly correlated. This can be removed through some code.
 
-Removing the highly correlated pairs (greater than .7), gives us the resultant heatmap below.
+The resultant heatmap below shows better correlation among the predictors.
 
 ![Correlation Matrix_3](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Correlation_Matrix_3.png)
 
