@@ -4,7 +4,7 @@
 
 ### Project: 
 
-Clean, explore, and model this dataset on a multivariate linear regression to predict the sale price of houses as accurately as possible.
+Clean, explore, and model the dataset on a multivariate linear regression to predict the sale price of houses as accurately as possible.
 
 ### Dataset:
 
