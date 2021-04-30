@@ -70,7 +70,7 @@ In the scatter matrix below, you can clearly see the two types of data. We can t
 
 ![Scatter Matrix](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Scatter_Matrix.png)
 
-#### Continuous variables
+#### Continuous Variables
 
 Plotting a histogram for the continuous variables show a high positive skewness. We can correct this by removing the outliers using some Z-score calculation.
 
@@ -80,7 +80,7 @@ After the outliers are removed, the resultant histogram shows clear improvement 
 
 ![Continuous Variables 2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Continuous_Variables_2.png)
 
-#### Categorical variables
+#### Categorical Variables
 
 The categorical variables also show presence of some outliers in its data.
 
