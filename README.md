@@ -12,17 +12,17 @@ King County Housing Sales Data
 
 ### Objective:
 
-#### EDA 1. Identify continuous vs categorical variables and transform them accordingly
+#### EDA 1. Identify effects of time on house prices over the years
 
 - The data set consists of many predictors which are both continuous and catgorical in nature. For us to perform a multivariate linear regression,
 these will need to be cleaned, trimmed and transformed appropriately before fitting them into a model.
 
-#### EDA 2. Check for multicollinearity and remove highly correlated pairs from the dataset 
+#### EDA 2. Identify the most and least desirable neighbourhoods in King County 
 
 - Multicollinearity reduces predictive power or significance of the predictors. Having a model without multicollineraty means that each of the predictors have an
 independent contribution to the overall result of the model.
 
-#### EDA 3. Finalize the model and plot the line of best fit to predict the price
+#### EDA 3. Identify the most important factor for a house price in King County
 
 - Test the model to predict house prices in King County.
 
