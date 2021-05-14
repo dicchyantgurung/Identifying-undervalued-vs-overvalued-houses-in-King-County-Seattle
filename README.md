@@ -14,17 +14,9 @@ King County Housing Sales Data
 
 #### EDA 1. Identify effects of time on house prices over the years
 
-- The data set consists of many predictors which are both continuous and catgorical in nature. For us to perform a multivariate linear regression,
-these will need to be cleaned, trimmed and transformed appropriately before fitting them into a model.
-
 #### EDA 2. Identify the most and least desirable neighbourhoods in King County 
 
-- Multicollinearity reduces predictive power or significance of the predictors. Having a model without multicollineraty means that each of the predictors have an
-independent contribution to the overall result of the model.
-
 #### EDA 3. Identify the most important factor for a house price in King County
-
-- Test the model to predict house prices in King County.
 
 ### Process Overview:
 
@@ -60,8 +52,6 @@ Step 6: Predict the price
 
 ### EDA 
 
-#### EDA 1. Identify continuous vs categorical variables and transform them accordingly
-
 After the data has been cleaned by removing the missing values, we need to separate the continuous and categorical variables to prepare them for regression.
 
 A simple way to identify these two variables is by plotting a scatter matrix. Continuous variables show a linear and even distribution across the plot. While categorical variables show a grouped and ordered distribution across the plot. There are also oridinal variables which are ordered-categorical variables. These are categorical classes with a natural order of progression and does not need to be transformed into dummy variables. 
@@ -72,19 +62,20 @@ In the scatter matrix below, you can clearly see the two types of data. We can t
 
 #### Continuous Variables
 
-Plotting a histogram for the continuous variables show a high positive skewness. We can correct this by removing the outliers using some Z-score calculation.
+Plotting a histogram for the continuous variables show a high positive skewness. 
 
-![Continuous Variables](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Continuous_Variables.png)
+![Continuous Variables](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/continuous1.png)
 
-After the outliers are removed, the resultant histogram shows clear improvement in the normality of the data. We will take this forward to fit the model.
+The skewness can be corrected by removing the outliers using Z-score calculation and some manual trimming of data. 
+The resultant histogram below shows clear improvement in the normality of the data. We will take this forward to fit the model.
 
-![Continuous Variables 2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Continuous_Variables_2.png)
+![Continuous Variables 2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/continuous2.png)
 
 #### Categorical Variables
 
 The categorical variables also show presence of some outliers in its data.
 
-![Categorical Variables](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variables.png)
+![Categorical Variables](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/categorical1.png)
 
 Within these variables we also have so called 'oridnal variables'. We can use the Z-score calculation on these ordinal varibles. However, we will have to the trim the rest of the categoricals manually.
 
@@ -94,66 +85,59 @@ After the outliers are removed, the resultant scatterplot shows better distictio
 
 ![Categorical Variables_3](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variables_3.png)
 
-#### EDA 2. Check for multicollinearity and remove highly correlated pairs from the dataset
+### Multicollinearity
 
 The dataset now needs to be checked for multicollinearity. Having high correlation means that predictors will have linear relationship with each other. This leads to predictors adding less value or being insignificant to the model. 
 
 A heatmap can be used to plot the correlation matrix.
 
-![Correlation Matrix](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Correlation_Matrix.png)
+![Correlation Matrix](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/corr1.png)
 
 Taking a closer look,
 
-![Correlation Matrix_2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Correlation_Matrix_2.png)
+![Correlation Matrix_2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/corr2.png)
 
 We can see from the colormap that there are some highly correlated pairs. The correlation ranges from -1 to 1. 1 being 100% postively related and -1 being 100% inversely related. It is common practise to consider any pairs greater than .7 to be highly correlated. This can be removed through some code.
 
 The resultant heatmap below shows better correlation among the predictors.
 
-![Correlation Matrix_3](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Correlation_Matrix_3.png)
+![Correlation Matrix_3](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/corr3.png)
 
-#### EDA 3. Finalize the model and plot the line of best fit to predict the price
+### Final Model
 
-We will use the statsmodel module to run the base model. The OLS regression in statsmodel gives us a line of best fit by minimizing the sum of squared vertical distances between the observed values and the values predicted by the linear approximation. This can be plotted using sns.regplot from seaborn library.
+We will use the statsmodel module to run the model. The OLS regression in statsmodel gives us a line of best fit by minimizing the sum of squared vertical distances between the observed values and the values predicted by the linear approximation. This can be plotted using sns.regplot from seaborn library.
 
-![Multivariate Regression](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Multivariate_Regression.png)
-
-From the plot above, we can see that there is a high dispersion of data after the million dollar mark in house prices. We can remove the houses priced over a million dollars to fix this and improve the performance of the model.
-
-![Multivariate Regression](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Multivariate_Regression_2.png)
+![Multivariate Regression](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/regression.png)
 
 The line of best fit looks more in-line with the data for this regression.
 
 ### Conclusion
 
-Based on the regression, our final model shows some meaningful relationships on how different variables affect the overall **Price** of a house. With an overall coefficient of **- $550k**, each of the characterstic's coefficients are added in multiples of their respective quantity, in order to give the final price of a house.
+Based on the regression, our final model shows some meaningful relationships on how different variables affect the overall **Price** of a house. With an overall coefficient of **- $228k**, each of the characterstic's coefficients are added in multiples of their respective quantity, in order to give the final price of a house.
 
 The following characterstics have a positive relationship with Price and helps increase the value of a home.
-* Sqft Lot **+ $1.5k**       
-* Number of Bedrooms **+ $27k** 
-* Number of Bathrooms **+ $38k** 
-* Condition of the house **+ $24k** 
-* Grade of the house **+ $77k** 
-* Number of times the house has been viewed. **+ $41k**  
+* Sqft Living **+ $80k** (per 1000 sq ft)
+* Sqft Lot **+ $10k** (per 1000 sq ft)      
+* Condition of the house **+ $25k** 
+* Grade of the house **+ $50k** 
+* Number of times the house has been viewed. **+ $35k**  
 
-Number of floors seem to have a negative relationship with the price of a house, which is odd. This could mean that people in King County prefer houses with lesser floors. However, statistically speaking our data has majority of houses with only one floor and decreases in count as the number of floors increases. This might have created a bias for 'Floors' in our model. **- $8k**
+**Number of Bedrooms** show a negative coefficient in the model. This could be because the model calculates the coefficients considering all factors that lead to a final price of a house. Thus when factoring for Bedroooms is coming up to be negative in terms of price action. Conclusively, our model suggests that higher number of Bedrooms in the same location with similar Sqft Living, Sqft Lot, Condition, Grade, etc is considered to decrease the value of a home. **- $16k**
 
-Houses built before the year of 1945 seem to have a positive relationship with Price. While houses built after 1945 have a decreasing negative relationship with Price. 
-* It can be explained that houses built before 1945 might have been considered 'historic'. Hence, preserving their value since they are over 50 years of age. **+ ($12k - $27k)**
-* Houses built after 1945 however has been losing value as older it gets. **- ($13k - $25k)**
+**Houses built before the year of 1945** seem to have a positive relationship with Price. It can be explained that these houses might have been preserving their value since they are over 50 years of age and are considered as historic. The **houses after 1945** have a decreasing negative relationship with Price, which confirms the market notion that old houses have lesser value than the new ones. **+ ($9k - 24k)**
 
 The relationship between different **Zipcodes** and **Price** shows the overall distribution of home value in King County. 
 
 The top 5 zipcodes with the highest home value are as follows:
 * Zipcode_98039	**+ $668k**
-* Zipcode_98004 **+ $506k**
-* Zipcode_98040	**+ $432k**
-* Zipcode_98112	**+ $400k**
-* Zipcode_98109 **+ $381k**
+* Zipcode_98004 **+ $516k**
+* Zipcode_98112	**+ $450k**
+* Zipcode_98102	**+ $445k**
+* Zipcode_98109 **+ $440k**
 
 While the least desirable zipcodes are as follows:
-* Zipcode_98023	**- $20k**
-* Zipcode_98092	**- $19k**
-* Zipcode_98002	**+ $7k**
-* Zipcode_98198	**+ 17K**
-* Zipcode_98058 **+ 34k**
+* Zipcode_98092	**- $20k**
+* Zipcode_98023	**- $13k**
+* Zipcode_98198	**+ $26k**
+* Zipcode_98188	**+ $34K**
+* Zipcode_98038 **+ 35k**
