@@ -118,7 +118,7 @@ Based on the regression, our final model shows some meaningful relationships on 
 The following characterstics have a positive relationship with Price and helps increase the value of a home.
 * Sqft Living **+ $80k** (per 1000 sq ft)
 * Sqft Lot **+ $10k** (per 1000 sq ft)      
-* Condition of the house **+ $25k** 
+* Condition of the house **+ $25k**  
 * Grade of the house **+ $50k** 
 * Number of times the house has been viewed. **+ $35k**  
 
