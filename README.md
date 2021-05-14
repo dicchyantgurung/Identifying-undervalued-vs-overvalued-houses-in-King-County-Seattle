@@ -27,7 +27,7 @@ Step 1: Clean the data
 Step 2: Pre-process the data
 - Identify continous vs categorical data
 - Remove outliers
-- Create ranges for some categorical variables
+- Create ranges for categorical variables
 - Transform categoricals into dummy variables
 - Merge continous and transformed categorical variables to create a final preprocessed dataframe
 
