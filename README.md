@@ -124,7 +124,7 @@ The following characterstics have a positive relationship with Price and helps i
 
 **Number of Bedrooms** show a negative coefficient in the model. This could be because the model calculates the coefficients considering all factors that lead to a final price of a house. And when factoring in for Bedroooms is coming out to be negative in terms of price action. Fundamentally our model suggests that higher number of Bedrooms in the same location with similar Sqft Living, Sqft Lot, Condition, Grade, etc is considered to decrease the value of a home. **- $16k**
 
-**Houses built before the year of 1945** seem to have a positive relationship with Price. It can be explained that these houses might have been preserving their value since they are over 50 years of age and are considered as historic. The **houses after 1945** have a decreasing negative relationship with Price, which confirms the market notion that old houses have lesser value than the new ones. **+ ($9k - 24k)**
+**Houses built before the year of 1945** seem to have a positive relationship with Price. It can be explained that these houses might have been preserving their value since they are over 50 years of age and can be considered 'historic'. The **houses after 1945** have a decreasing negative relationship with Price, which confirms the market notion that old houses have lesser value than the new ones. **+ ($9k - 24k)**
 
 The relationship between different **Zipcodes** and **Price** shows the overall distribution of home value in King County. 
 
