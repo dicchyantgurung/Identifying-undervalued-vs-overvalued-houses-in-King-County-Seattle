@@ -113,7 +113,7 @@ The line of best fit gives us the truest value of the house at any given point i
 
 Our final model has a R-squared of 0.812 which means that this model is able to account for about 81.2% variability present in the data.
 
-Based on the regression, our final model shows some meaningful relationships on how different variables affect the overall **Price** of a house. With an overall coefficient of **- $228k**, each of the characterstic's coefficients are added in multiples of their respective quantity, in order to give the final price of a house.
+The model shows clear relationships on how different variables affect the overall **Price** of a house. With an overall coefficient of **- $228k**, each of the characterstic's coefficients are added in multiples of their respective quantity, in order to give the final price of a house.
 
 The following characterstics have a positive relationship with Price and helps increase the value of a home.
 * Sqft Living **+ $80k** (per 1000 sq ft)
