@@ -97,7 +97,7 @@ Taking a closer look,
 
 We can see from the colormap that there are some highly correlated pairs. The correlation ranges from -1 to 1. 1 being 100% linearly related and -1 being 100% inversely related. It is common practise to consider any pairs greater than .7 to be highly correlated. This can be easily removed through some code.
 
-The resultant heatmap show a better independence among the predictors.
+The resultant heatmap shows a better independence among the predictors.
 
 ![Correlation Matrix_3](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/corr3.png)
 
