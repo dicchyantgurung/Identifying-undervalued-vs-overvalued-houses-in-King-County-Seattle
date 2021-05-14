@@ -50,7 +50,7 @@ Step 6: Predict the price
 
 ### EDA 
 
-After the data has been cleaned by removing the missing values, we need to separate the continuous and categorical variables to prepare them for regression.
+After the data has been cleaned, we need to separate the continuous and categorical variables to prepare them for regression.
 
 A simple way to identify these two variables is by plotting a scatter matrix. Continuous variables show a linear and even distribution across the plot. While categorical variables show a grouped and ordered distribution across the plot. There are also oridinal variables which are ordered-categorical variables. These are categorical classes with a natural order of progression and does not need to be transformed into dummy variables. 
 
