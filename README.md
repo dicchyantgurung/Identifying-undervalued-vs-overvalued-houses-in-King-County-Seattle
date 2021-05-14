@@ -12,7 +12,7 @@ King County Housing Sales Data
 
 ### Objective:
 
-#### - EDA 1. Identify effects of time on house prices over the years
+#### - EDA 1. Identify effects of time on house prices 
 
 #### - EDA 2. Identify the most and least desirable neighbourhoods in King County 
 
