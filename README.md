@@ -77,7 +77,7 @@ The categorical variables also show presence of some outliers in its data.
 
 Within these variables we also have so called 'oridnal variables'. We can use the Z-score calculation on these ordinal varibles. However, we will have to the trim the rest of the categoricals manually.
 
-After the outliers are removed, the resultant scatterplot shows better distiction among classes for the categorical variables. 
+After the outliers are removed, the resultant scatterplot shows better distiction among classes for each of the categorical variables. 
 
 ![Categorical Variables_2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/Categorical_Variables_2.png)
 
