@@ -107,7 +107,7 @@ We will use the statsmodel module to run the model. The OLS regression in statsm
 
 ![Multivariate Regression](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/regression.png)
 
-The line of best fit gives us the truest value of the house at any point in time. 
+The line of best fit gives us the truest value of the house at any given point in time. 
 
 ### Conclusion
 
