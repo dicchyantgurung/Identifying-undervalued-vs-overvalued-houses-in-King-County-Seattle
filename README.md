@@ -67,7 +67,7 @@ Plotting a histogram for the continuous variables show a high positive skewness.
 ![Continuous Variables](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/continuous1.png)
 
 The skewness can be corrected by removing the outliers using Z-score calculation and some manual trimming of data. 
-The resultant histogram below shows clear improvement in the normality of the data. We will take this forward to fit the model.
+The resultant histogram shows clear improvement in the normality of the data. We will take this forward to fit the model.
 
 ![Continuous Variables 2](https://github.com/dicchyant84/Module_2-Final-Project/blob/main/Graphs/continuous2.png)
 
